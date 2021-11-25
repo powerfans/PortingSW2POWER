@@ -125,10 +125,8 @@ Each programming language contains a unique set of keywords and syntax, which ar
 
 Compiling method    | porting strategy
 --------------------|--------------------
-Compiled language   |Requires source code to compile into machine code for POWER processor
-                    |Dependent Components：Obtain the source code for POWER and recompile it into components or replace it with similar components which support POWER architecture. 
-Interpreted language|Replace the interpreter for POWER architecture. For example,  JDK or Python parser
-                    |Dependent Components：Obtain the source code for POWER and recompile it into components or replace it with similar components which support POWER architecture.
+Compiled language   |Requires source code to compile into machine code for POWER processor.Dependent Components：Obtain the source code for POWER and recompile it into components or replace it with similar components which support POWER architecture.
+Interpreted language|Replace the interpreter for POWER architecture. For example,  JDK or Python parser.Dependent Components：Obtain the source code for POWER and recompile it into components or replace it with similar components which support POWER architecture.
 
 ##### 2.2.2.3 Closed source software
 
@@ -169,10 +167,13 @@ GCC4.8.5 or above、 LLVM8.0 or above、 IBM XLC/C++、 IBM XLF、 IBM AT(IBM Ad
 ##### 2.3.2.4 Porting the source code
 
 1）	Porting SIMD instruction
+
 a） porting MMX/SSE code: Upgrade the compiler to GCC 8+，add compiler option -DNO_WARN_X86_INTRINSICS or modify the source code directly, replace the instructions with VSX set .
+
 b） porting AVX code: Replace the instructions with VSX set.
 
 2）Porting Assemble instruction
+
 The assemble language for POWER architecture is totally different with X86 architecture. All code with developed by assemble language need to be replaced with assemble language for POWER architecture.
 
 ### 2.4 Optimizing
@@ -187,9 +188,13 @@ To gain better performance and deep optimization for POWER process, please obtai
 
 #### 2.4.2 Compiler options optimization
 
-GCC/AT compile option：-O3 -flto -funroll-loops -ffast-math -mcpu=power9 -mtune=power9
+GCC/AT compile option：
 
-XLC/C++ compile option：-O3 -qhot -qipa -qpdf2 -qarch=pwr9 -qtune=pwr9
+    -O3 -flto -funroll-loops -ffast-math -mcpu=power9 -mtune=power9
+
+XLC/C++ compile option：
+
+    -O3 -qhot -qipa -qpdf2 -qarch=pwr9 -qtune=pwr9
 
 #### 2.4.3 Library optimization
 
@@ -198,9 +203,12 @@ Please use components provided by IBM because IBM experts have optimized those c
 #### 2.4.4 OpenJDK optimization
 
 Compare with OpenJDK for X86 architecture, OpenJDK for POWER architecture added some options to optimize garbage collection：
--XX:+UseParallelGC -XX:+UseAdaptiveSizePolicy -XX:ParallelGCThreads=4。
 
-Compared with x86 platform, POWER platform need to add optimization option for garbage collection：-XX:+UseParallelGC -XX:+UseAdaptiveSizePolicy -XX:ParallelGCThreads=4。
+    -XX:+UseParallelGC -XX:+UseAdaptiveSizePolicy -XX:ParallelGCThreads=4。
+
+Compared with x86 platform, POWER platform need to add optimization option for garbage collection：
+
+    -XX:+UseParallelGC -XX:+UseAdaptiveSizePolicy -XX:ParallelGCThreads=4。
 
 #### 2.4.5 Code optimization
 
