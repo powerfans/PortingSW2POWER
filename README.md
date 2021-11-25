@@ -125,10 +125,8 @@ Each programming language contains a unique set of keywords and syntax, which ar
 
 Compiling method    | porting strategy
 --------------------|--------------------
-Compiled language   |Requires source code to compile into machine code for POWER processor.
-Dependent Components：Obtain the source code for POWER and recompile it into components or replace it with similar components which support POWER architecture.
-Interpreted language|Replace the interpreter for POWER architecture. For example,  JDK or Python parser.
-Dependent Components：Obtain the source code for POWER and recompile it into components or replace it with similar components which support POWER architecture.
+Compiled language   |Requires source code to compile into machine code for POWER processor. Dependent Components：Obtain the source code for POWER and recompile it into components or replace it with similar components which support POWER architecture.
+Interpreted language|Replace the interpreter for POWER architecture. For example,  JDK or Python parser. Dependent Components：Obtain the source code for POWER and recompile it into components or replace it with similar components which support POWER architecture.
 
 ##### 2.2.2.3 Closed source software
 
@@ -205,7 +203,7 @@ Elimination of implicit memory usage.
 -qhot                   |-funroll-loops         |Enables a set of high-order transformation. optimizations that are most effective when optimizing loop constructs.
 -qipa                   |-flto                  |IPA restructure application, performing optimizations such as inlining between compilation units and improve inline code.
 -qpdf1 -qpdf2           |-fprofile-generate -fprofile-use|Use PDF to get information such as the locations of heavily used or infrequently used blocks of code.
--                       |-ffast-math            |Control compiler behavior regarding floating point arithmetic and allow optimizations for floating-point arithmetic.
+-.                      |-ffast-math            |Control compiler behavior regarding floating point arithmetic and allow optimizations for floating-point arithmetic.
 -qarch=pwr9             |-mcpu=power9           |The most important step in influencing chip-level optimization, especially for POWER9.
 
 #### 2.4.3 Library optimization
