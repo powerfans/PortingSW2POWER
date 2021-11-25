@@ -198,8 +198,7 @@ XLC/C++ compile option：
 
 XLC/C++ compile options	|GCC/AT compile options	|Optimization
 ------------------------|-----------------------|-----------------------
--O3                     |-O3                    |Better loop scheduling and transformation.
-Elimination of implicit memory usage.
+-O3                     |-O3                    |Better loop scheduling and transformation.Elimination of implicit memory usage.
 -qhot                   |-funroll-loops         |Enables a set of high-order transformation. optimizations that are most effective when optimizing loop constructs.
 -qipa                   |-flto                  |IPA restructure application, performing optimizations such as inlining between compilation units and improve inline code.
 -qpdf1 -qpdf2           |-fprofile-generate -fprofile-use|Use PDF to get information such as the locations of heavily used or infrequently used blocks of code.
